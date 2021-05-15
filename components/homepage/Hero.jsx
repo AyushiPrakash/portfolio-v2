@@ -1,8 +1,13 @@
 import React from "react";
-import { Header } from "../shared";
+import styled from "styled-components";
+
+const Container = styled.main`
+  min-height: 100vh;
+  background-color: ${(props) => props.theme.backgroundSecondary};
+`;
 
 const Hero = () => {
-  return <div></div>;
+  return <Container></Container>;
 };
 
 export default Hero;
