@@ -1,7 +1,10 @@
 import React from "react";
+import styled from "styled-components";
+
+const Container = styled.main``;
 
 const Header = () => {
-  return <div></div>;
+  return <Container></Container>;
 };
 
 export default Header;
