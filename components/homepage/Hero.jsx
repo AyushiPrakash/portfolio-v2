@@ -12,9 +12,16 @@ const LeftSection = styled.section`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  height: 50%;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 
   .info {
-    font-size: 48pt;
+    font-size: 52pt;
     font-weight: 600;
     font-family: "Blinker", sans-serif;
     color: ${(props) => props.theme.textPrimary};

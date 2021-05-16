@@ -7,12 +7,13 @@ const Container = styled.main`
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding:1rem 0;
+  padding: 1rem 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   color: ${(props) => props.theme.textPrimary};
+  font-family: "Blinker", sans-serif;
 
   .logo {
     font-size: 36pt;
@@ -27,8 +28,8 @@ const Container = styled.main`
     font-size: 14pt;
     font-weight: 400;
 
-    span:not(:last-child)  {
-      margin-right:  2rem;
+    span:not(:last-child) {
+      margin-right: 2rem;
     }
   }
 `;
@@ -39,10 +40,10 @@ const Header = () => {
       <div className="logo">AP</div>
 
       <div className="wrapper">
-        <span>About</span>
-        <span>Experience</span>
-        <span>Projects</span>
-        <span>Contact</span>
+        <span>ABOUT</span>
+        <span>EXPERIENCE</span>
+        <span>PROJECTS</span>
+        <span>CONTACT</span>
         {/* <Button>
           <span>Resume</span>
         </Button> */}
