@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Title } from "../shared/";
+import { Title, Header } from "../shared/";
+
 
 const Container = styled.main`
   min-height: 100vh;
@@ -23,10 +24,9 @@ const LeftSection = styled.section`
 const Hero = () => {
   return (
     <Container>
+      <Header />
       <LeftSection>
-        <Title color={"#f4f4f2"}>
-          Ayushi Prakash
-        </Title>
+        <Title color={"#f4f4f2"}>Ayushi Prakash</Title>
         <div className="info">
           Hello, my <br /> name's Ayushi.
           <br /> I'm a developer & <br /> a designer.
