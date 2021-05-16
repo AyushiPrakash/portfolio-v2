@@ -7,16 +7,30 @@ const Container = styled.main`
   background-color: ${(props) => props.theme.backgroundSecondary};
 `;
 
-const LeftSection = styled.section``;
+const LeftSection = styled.section`
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .info {
+    font-size: 48pt;
+    font-weight: 600;
+    font-family: "Blinker", sans-serif;
+    color: ${(props) => props.theme.textPrimary};
+  }
+`;
 
 const Hero = () => {
   return (
     <Container>
       <LeftSection>
-        <Title>
-          <span>Ayushi Prakash</span>
+        <Title color={"#f4f4f2"}>
+          Ayushi Prakash
         </Title>
-        <div>Hello, my name's Ayushi. I'm a developer & a designer.</div>
+        <div className="info">
+          Hello, my <br /> name's Ayushi.
+          <br /> I'm a developer & <br /> a designer.
+        </div>
       </LeftSection>
     </Container>
   );

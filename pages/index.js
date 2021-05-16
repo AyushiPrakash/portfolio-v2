@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from "next/head";
 import {
   About,
   Contact,
@@ -15,8 +15,8 @@ export default function Home() {
         <title>Ayuu's Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Hero />
       <Layout>
-        <Hero />
         <About />
         <Experience />
         <Projects />
