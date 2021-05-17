@@ -14,6 +14,7 @@ const Container = styled.main`
   align-items: center;
   color: ${(props) => props.theme.textPrimary};
   font-family: "Blinker", sans-serif;
+  cursor: pointer;
 
   .logo {
     font-size: 36pt;
