@@ -1,6 +1,8 @@
 import "../styles/globals.css";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "../styles/globalStyles";
+import Head from "next/head";
+
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -14,6 +16,9 @@ function MyApp({ Component, pageProps }) {
       }}
     >
       <GlobalStyles />
+      <Head>
+        <script src="/js/TagCanvas.js"></script>
+      </Head>
       <Component {...pageProps} />
     </ThemeProvider>
   );
