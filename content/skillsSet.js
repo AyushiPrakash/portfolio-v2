@@ -72,4 +72,12 @@ export const SkillSet = [
     name: "Ant Design",
     image: "antdesign",
   },
+  {
+    name: "Python",
+    image: "python",
+  },
+  {
+    name: "Redux",
+    image: "redux",
+  },
 ];
