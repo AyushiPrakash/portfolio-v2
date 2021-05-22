@@ -7,10 +7,19 @@ const Container = styled.main`
   background-color: ${(props) => props.theme.backgroundPrimary};
 `;
 
-const ProjectContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+const ProjectContainer = styled.div`
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: auto;
+  margin-left: auto;
+
+  .projectCard {
+    opacity: 1;
+    margin-top: -20em;
+    padding: 7rem 0;
+    transform: none;
+  }
 `;
 
 
@@ -19,7 +28,7 @@ const Projects = () => {
     <Container>
       <Title>Projects</Title>
       <ProjectContainer>
-        <img src="" />
+        <div className="projectCard"></div>
       </ProjectContainer>
     </Container>
   );
