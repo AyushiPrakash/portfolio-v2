@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }) {
         accentColor: "#ff503f",
         backgroundPrimary: "#F4F4F2",
         backgroundSecondary: "#D4C9C9",
+        backgroundHighlight: "#FFFFFF",
       }}
     >
       <GlobalStyles />
