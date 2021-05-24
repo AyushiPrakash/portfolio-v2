@@ -62,6 +62,7 @@ const ProjectContainer = styled.div`
         font-family: "Blinker", sans-serif;
         color: ${(props) => props.theme.textPrimary};
         font-size: 14pt;
+        font-weight: 300;
         line-height: 20pt;
       }
 
@@ -115,7 +116,10 @@ const Projects = () => {
                     <a
                       href={project.githubLink}
                       target="_blank"
-                      style={{ color: "#ff503f" }}
+                      style={{
+                        color: "#ff503f",
+                        height: "24px",
+                      }}
                     >
                       <FaGithub size={24} />
                     </a>
@@ -125,7 +129,11 @@ const Projects = () => {
                     <a
                       href={project.demoLink}
                       target="_blank"
-                      style={{ marginLeft: "8px", color: "#ff503f" }}
+                      style={{
+                        marginLeft: "8px",
+                        color: "#ff503f",
+                        height: "24px",
+                      }}
                     >
                       <BsBoxArrowUpRight size={24} />
                     </a>
