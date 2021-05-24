@@ -35,6 +35,7 @@ const ProjectContainer = styled.div`
       margin-top: 0;
       height: 42vh;
       width: 100%;
+      border-radius: 0.25rem;
     }
 
     .content {
