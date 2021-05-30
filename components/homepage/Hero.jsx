@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Title, Header } from "../shared/";
 
-
 const Container = styled.main`
   min-height: 100vh;
   background-color: ${(props) => props.theme.backgroundSecondary};
@@ -24,7 +23,7 @@ const LeftSection = styled.section`
     font-size: 52pt;
     font-weight: 600;
     font-family: "Blinker", sans-serif;
-    color: ${(props) => props.theme.textPrimary};
+    color: #2c2c2c;
   }
 `;
 

@@ -22,6 +22,7 @@ const LeftSection = styled.main`
     font-weight: 400;
     opacity: 0.8;
     margin-bottom: 1.25rem;
+    color: ${(props) => props.theme.textPrimary};
 
     a {
       color: ${(props) => props.theme.accentColor};
@@ -36,6 +37,7 @@ const LeftSection = styled.main`
     margin: 20px 0 0 0;
     overflow: hidden;
     list-style: none;
+    color: ${(props) => props.theme.textPrimary};
 
     li {
       position: relative;

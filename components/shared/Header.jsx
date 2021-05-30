@@ -12,7 +12,7 @@ const Container = styled.main`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  color: ${(props) => props.theme.textPrimary};
+  color: #2c2c2c;
   font-family: "Blinker", sans-serif;
   cursor: pointer;
 
