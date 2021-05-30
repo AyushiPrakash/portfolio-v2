@@ -20,7 +20,7 @@ const LeftSection = styled.main`
   p {
     font-size: 13pt;
     font-weight: 400;
-    opacity: 0.8;
+    opacity: 0.9;
     margin-bottom: 1.25rem;
     color: ${(props) => props.theme.textPrimary};
 
