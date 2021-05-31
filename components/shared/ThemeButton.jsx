@@ -33,6 +33,10 @@ const Button = styled.span`
     z-index: 10;
     margin: 0.75rem 0.75rem 0 0;
     animation: zoom 500ms ease;
+
+    &:hover {
+      filter: opacity(0.8);
+    }
   }
 `;
 

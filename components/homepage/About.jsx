@@ -58,12 +58,12 @@ const LeftSection = styled.main`
 const RightSection = styled.main`
   display: grid;
   place-items: center;
-  flex:  3;
-  padding:0 4rem;
+  flex: 3;
+  padding: 0 4rem;
 
   canvas {
     width: calc(100% - 8rem);
-    min-width:  520px;
+    min-width: 520px;
     height: auto;
   }
 `;
@@ -99,7 +99,8 @@ const About = () => {
             document.getElementById('myCanvasContainer').style.display = 'none';
           } `
     );
-  }, []);
+  }, [theme]);
+
   return (
     <Container>
       <LeftSection>
@@ -127,7 +128,7 @@ const About = () => {
           <li>React.js</li>
           <li>Firebase</li>
           <li>Next.js</li>
-          <li>SASS</li>
+          <li>Three.js</li>
         </ul>
       </LeftSection>
       <RightSection>
