@@ -5,7 +5,7 @@ import { HiOutlineMoon } from "react-icons/hi";
 
 const Button = styled.span`
   cursor: pointer;
-  .corner {
+  /* .corner {
     fill: ${({ theme }) => theme.backgroundSecondary};
     position: absolute;
     top: 0;
@@ -16,7 +16,7 @@ const Button = styled.span`
     &:hover {
       filter: opacity(0.8);
     }
-  }
+  } */
   @keyframes zoom {
     from {
       transform: scale(0);
