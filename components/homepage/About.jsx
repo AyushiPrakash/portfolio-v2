@@ -102,7 +102,7 @@ const About = () => {
   }, [theme]);
 
   return (
-    <Container>
+    <Container id="about">
       <LeftSection>
         <Title>About Me</Title>
         <p>Hello, I'm Ayushi.</p>

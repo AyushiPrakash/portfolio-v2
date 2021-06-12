@@ -29,7 +29,12 @@ const Container = styled.main`
     font-size: 14pt;
     font-weight: 400;
 
-    span:not(:last-child) {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a:not(:last-child) {
       margin-right: 2rem;
     }
   }
@@ -41,12 +46,12 @@ const Header = () => {
       <div className="logo">AP</div>
 
       <div className="wrapper">
-        <span>ABOUT</span>
-        <span>EXPERIENCE</span>
-        <span>PROJECTS</span>
-        <span>CONTACT</span>
+        <a href="#about">ABOUT</a>
+        <a href="#experience">EXPERIENCE</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#contact">CONTACT</a>
         {/* <Button>
-          <span>Resume</span>
+          <a>Resume</a>
         </Button> */}
       </div>
     </Container>

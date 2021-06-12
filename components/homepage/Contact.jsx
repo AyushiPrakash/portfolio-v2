@@ -7,7 +7,7 @@ const Container = styled.main`
 `;
 
 const Contact = () => {
-  return <Container></Container>;
+  return <Container id="contact"></Container>;
 };
 
 export default Contact;

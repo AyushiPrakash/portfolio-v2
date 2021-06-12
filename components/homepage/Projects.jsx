@@ -88,7 +88,7 @@ const ProjectContainer = styled.div`
 
 const Projects = () => {
   return (
-    <Container>
+    <Container id="projects">
       <Title>Projects</Title>
       <ProjectContainer>
         {ProjectsData.map((project, index) => {

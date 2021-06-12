@@ -18,7 +18,7 @@ const darkTheme = {
   textPrimary: "#F4F4F2",
   textSecondary: "#999999",
   accentColor: "#FE4B00",
-  backgroundPrimary: "#323738",
+  backgroundPrimary: "#262626",
   backgroundSecondary: "#D4C9C9",
   backgroundHighlight: "#2c2c2c",
 };
