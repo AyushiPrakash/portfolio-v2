@@ -75,19 +75,10 @@ const Container = styled.main`
         font-size: 12pt;
       }
     }
-
-    .rightSection {
-      padding: 0 5rem;
-
-      canvas {
-        width: calc(100% - 10rem);
-        min-width: 340px;
-      }
-    }
   }
 
   @media only screen and (max-width: 930px) {
-    flex-direction: column;
+    display: block;
     margin-top: 4rem;
 
     .leftSection {
@@ -95,10 +86,12 @@ const Container = styled.main`
     }
 
     .rightSection {
-      padding: 0 4rem;
+      padding: 0;
+      width: 100%;
 
       canvas {
-        width: calc(100% - 8rem);
+        width:     100%;
+        min-width: 0;
       }
     }
   }
