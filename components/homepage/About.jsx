@@ -10,61 +10,97 @@ const Container = styled.main`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-`;
+  padding: 0 2rem;
 
-const LeftSection = styled.main`
-  max-width: 500px;
-  flex: 4;
-  overflow-x: hidden;
+  .leftSection {
+    max-width: 900px;
+    width: 100%;
+    flex: 6;
+    overflow-x: hidden;
 
-  p {
-    font-size: 13pt;
-    font-weight: 400;
-    opacity: 0.9;
-    margin-bottom: 1.25rem;
-    color: ${(props) => props.theme.textPrimary};
+    p {
+      font-size: 13pt;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-bottom: 1.25rem;
+      color: ${(props) => props.theme.textPrimary};
 
-    a {
-      color: ${(props) => props.theme.accentColor};
-      text-decoration: none;
-    }
-  }
-
-  ul {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px));
-    padding: 0;
-    margin: 20px 0 0 0;
-    overflow: hidden;
-    list-style: none;
-    color: ${(props) => props.theme.textPrimary};
-
-    li {
-      position: relative;
-      margin-bottom: 0.75rem;
-      padding-left: 20px;
-
-      &:before {
-        content: "▹";
-        position: absolute;
-        left: 0;
+      a {
         color: ${(props) => props.theme.accentColor};
-        line-height: 20px;
+        text-decoration: none;
+      }
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(140px, 200px));
+      padding: 0;
+      margin: 20px 0 0 0;
+      overflow: hidden;
+      list-style: none;
+      color: ${(props) => props.theme.textPrimary};
+
+      li {
+        position: relative;
+        margin-bottom: 0.75rem;
+        padding-left: 20px;
+
+        &:before {
+          content: "▹";
+          position: absolute;
+          left: 0;
+          color: ${(props) => props.theme.accentColor};
+          line-height: 20px;
+        }
       }
     }
   }
-`;
 
-const RightSection = styled.main`
-  display: grid;
-  place-items: center;
-  flex: 3;
-  padding: 0 4rem;
+  .rightSection {
+    display: grid;
+    place-items: center;
+    flex: 2;
+    padding: 0 2rem;
 
-  canvas {
-    width: calc(100% - 8rem);
-    min-width: 520px;
-    height: auto;
+    canvas {
+      width: calc(100% - 4rem);
+      min-width: 480px;
+      height: auto;
+    }
+  }
+
+  @media only screen and (max-width: 420px) {
+    .leftSection {
+      p {
+        font-size: 12pt;
+      }
+    }
+
+    .rightSection {
+      padding: 0 5rem;
+
+      canvas {
+        width: calc(100% - 10rem);
+        min-width: 340px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 930px) {
+    flex-direction: column;
+    margin-top: 4rem;
+
+    .leftSection {
+      align-self: center;
+    }
+
+    .rightSection {
+      padding: 0 4rem;
+
+      canvas {
+        width: calc(100% - 8rem);
+      }
+    }
   }
 `;
 
@@ -103,7 +139,7 @@ const About = () => {
 
   return (
     <Container id="about">
-      <LeftSection>
+      <div className="leftSection">
         <Title>About Me</Title>
         <p>Hello, I'm Ayushi.</p>
         <p>
@@ -130,8 +166,8 @@ const About = () => {
           <li>Next.js</li>
           <li>Three.js</li>
         </ul>
-      </LeftSection>
-      <RightSection>
+      </div>
+      <div className="rightSection">
         <canvas width="650" height="650" id="myCanvas">
           <p>
             Anything in here will be replaced on browsers that support the
@@ -162,7 +198,7 @@ const About = () => {
             ))}
           </ul>
         </canvas>
-      </RightSection>
+      </div>
     </Container>
   );
 };
