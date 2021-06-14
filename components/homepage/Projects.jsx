@@ -8,7 +8,7 @@ import { ProjectsData } from "../../content/projectsData";
 const Container = styled.main`
   min-height: 100vh;
   background-color: ${(props) => props.theme.backgroundPrimary};
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 
   .projectContainer {
     width: 100%;

@@ -10,7 +10,7 @@ const Container = styled.main`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 
   .leftSection {
     max-width: 900px;
@@ -60,7 +60,7 @@ const Container = styled.main`
     display: grid;
     place-items: center;
     flex: 2;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
 
     canvas {
       width: calc(100% - 4rem);

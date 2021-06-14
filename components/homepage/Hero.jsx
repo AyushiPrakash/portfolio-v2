@@ -10,7 +10,7 @@ const Container = styled.main`
     width: 100%;
     max-width: calc(1200px + 4rem);
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     height: 50%;
     margin: auto;
     position: absolute;
