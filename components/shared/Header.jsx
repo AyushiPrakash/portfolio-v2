@@ -4,10 +4,10 @@ import { Button } from "../shared/";
 
 const Container = styled.main`
   background-color: ${(props) => props.theme.backgroundSecondary};
-  max-width: 1200px;
+  max-width: calc(1200px + 4rem);
   width: 100%;
   margin: 0 auto;
-  padding: 1.5rem 0;
+  padding: 1.5rem 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -36,6 +36,12 @@ const Container = styled.main`
 
     a:not(:last-child) {
       margin-right: 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .wrapper {
+      display: none;
     }
   }
 `;

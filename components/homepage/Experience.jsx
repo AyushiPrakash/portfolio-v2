@@ -6,6 +6,7 @@ import { Title, Header } from "../shared/";
 const Container = styled.main`
   min-height: 100vh;
   background-color: ${(props) => props.theme.backgroundPrimary};
+  padding: 0 2rem;
 
   .title {
     text-align: right;
