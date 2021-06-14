@@ -1,0 +1,48 @@
+export const ExperienceData = [
+  {
+    id: "bwi",
+    role: "React Developer",
+    name: "Build with Innovation",
+    link: "",
+    duration: "Dec 2020 - May 2021",
+    type: "Internship",
+    description:
+      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque",
+  },
+  {
+    id: "parva",
+    role: "React Developer",
+    name: "Parva",
+    link: "",
+    duration: "Dec 2020 - Feb 2021",
+    type: "Internship",
+    description: "",
+  },
+  {
+    id: "ieee",
+    role: "Design/Backend Mentor",
+    name: "IEEE, SRMIST",
+    link: "",
+    duration: "Dec 2020 - Present",
+    type: "College Club",
+    description: "",
+  },
+  {
+    id: "td",
+    role: "Web Dev Member",
+    name: "Think-Digital, SRMIST",
+    link: "",
+    duration: "Sep 2020 - Present",
+    type: "College Club",
+    description: "",
+  },
+  {
+    id: "arl",
+    role: "Corporate Domain Member ",
+    name: "Aakash Research Labs, SRMIST",
+    link: "",
+    duration: "Sep 2018 - Aug 2019",
+    type: "College Club",
+    description: "",
+  },
+];

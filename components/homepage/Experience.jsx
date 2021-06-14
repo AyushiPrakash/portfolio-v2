@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Title, Header } from "../shared/";
+import ReactMarkdown from "react-markdown";
+import { ExperienceData } from "../../content/experienceData.js";
+import { BsBoxArrowUpRight } from "react-icons/bs";
 
 const Container = styled.main`
   min-height: 100vh;
@@ -11,60 +14,118 @@ const Container = styled.main`
     text-align: right;
   }
 
-  /* Style the tab */
-  .tab {
-    float: left;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-    width: 30%;
-    height: 300px;
-  }
+  .tabContainer {
+    margin-top: 6rem;
 
-  /* Style the buttons that are used to open the tab content */
-  .tab button {
-    display: block;
-    background-color: inherit;
-    color: black;
-    padding: 22px 16px;
-    width: 100%;
-    border: none;
-    outline: none;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.3s;
-    /* Change background color of buttons on hover */
-
-    &:hover {
-      background-color: #ddd;
+    .tab {
+      float: left;
+      width: 28%;
     }
-    /* Create an active/current "tab button" class */
 
-    &.active {
-      background-color: #ccc;
-    }
-  }
-
-  /* Style the tab content */
-  .tabcontent {
-    float: left;
-    padding: 0px 12px;
-    border: 1px solid #ccc;
-    width: 70%;
-    border-left: none;
-    height: 300px;
-
-    &.active   {
+    .tab button {
       display: block;
+      background-color: inherit;
+      color: ${(props) => props.theme.textPrimary};
+      position: relative;
+      padding: 24px 22px;
+      width: 100%;
+      border: none;
+      outline: none;
+      transition: 0.3s;
+      font-size: 12pt;
+      text-align: left;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background-color: ${(props) => props.theme.textPrimary};
+      }
+
+      &:hover {
+        background-color: #f0ecec;
+      }
+
+      &.active {
+        color: ${(props) => props.theme.accentColor};
+        background-color: #f0ecec;
+      }
+
+      &.active::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: -1px;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background-color: ${(props) => props.theme.accentColor};
+      }
     }
 
-    &:not(.active)   {
-      display: none;
+    .tabcontent {
+      width: 72%;
+      float: left;
+      padding: 0px 48px;
+      border-left: none;
+      display: flex;
+      flex-direction: column;
+      color: ${(props) => props.theme.textPrimary};
+
+      &.active {
+        display: block;
+      }
+
+      &:not(.active) {
+        display: none;
+      }
+
+      .titleContainer {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.25rem;
+
+        .role {
+          font-size: 18pt;
+        }
+
+        .name {
+          font-size: 18pt;
+          color: ${(props) => props.theme.accentColor};
+        }
+
+        .link {
+          margin-left: auto;
+
+          .icon {
+            font-size: 16pt;
+            color: ${(props) => props.theme.textPrimary};
+          }
+        }
+      }
+
+      .details {
+        color: ${(props) => props.theme.textSecondary};
+        font-size: 13pt;
+        margin-bottom: 1rem;
+      }
+
+      .desc {
+        font-size: 13pt;
+        font-weight: 400;
+        opacity: 0.9;
+      }
     }
   }
 `;
 
 const Experience = () => {
-  const [active, setActive] = useState("london");
+  const [active, setActive] = useState(ExperienceData[0].id);
 
   const handleTabChange = (e) => {
     setActive(e.target.id);
@@ -73,44 +134,44 @@ const Experience = () => {
   return (
     <Container id="experience">
       <Title className="title">Experience</Title>
-
-      <div className="tab">
-        <button
-          id="london"
-          className={`tablinks ${active === "london" ? "active" : ""}`}
-          onClick={handleTabChange}
-        >
-          London
-        </button>
-        <button
-          id="paris"
-          className={`tablinks ${active === "paris" ? "active" : ""}`}
-          onClick={handleTabChange}
-        >
-          Paris
-        </button>
-        <button
-          id="tokyo"
-          className={`tablinks ${active === "tokyo" ? "active" : ""}`}
-          onClick={handleTabChange}
-        >
-          Tokyo
-        </button>
-      </div>
-
-      <div className={`tabcontent ${active === "london" ? "active" : ""}`}>
-        <h3>London</h3>
-        <p>London is the capital city of England.</p>
-      </div>
-
-      <div className={`tabcontent ${active === "paris" ? "active" : ""}`}>
-        <h3>Paris</h3>
-        <p>Paris is the capital of France.</p>
-      </div>
-
-      <div className={`tabcontent ${active === "tokyo" ? "active" : ""}`}>
-        <h3>Tokyo</h3>
-        <p>Tokyo is the capital of Japan.</p>
+      <div className="tabContainer">
+        <div className="tab">
+          {ExperienceData.map((exp) => {
+            return (
+              <button
+                id={exp.id}
+                className={`tablinks ${active === `${exp.id}` ? "active" : ""}`}
+                onClick={handleTabChange}
+              >
+                {exp.name}
+              </button>
+            );
+          })}
+        </div>
+        {
+          ExperienceData.map((exp) => {
+            return (
+              <div
+                className={`tabcontent ${
+                  active === `${exp.id}` ? "active" : ""
+                }`}
+              >
+                <div className="titleContainer">
+                  <span className="role">{exp.role}</span>
+                  <span className="name">&thinsp;@{exp.name}</span>
+                  <a className="link" href={exp.link} target="_blank">
+                    <BsBoxArrowUpRight className="icon" />
+                  </a>
+                </div>
+                <div className="details">
+                  <span className="duration">{exp.duration}&ensp;</span>
+                  <span className="type">|&ensp;{exp.type}</span>
+                </div>
+                <div className="desc">{exp.description}</div>
+              </div>
+            );
+          })
+        }
       </div>
     </Container>
   );
