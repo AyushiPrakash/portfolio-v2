@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Title, Header } from "../shared/";
 import ReactMarkdown from "react-markdown";
 import { ExperienceData } from "../../content/experienceData.js";
 import { BsBoxArrowUpRight } from "react-icons/bs";
+import { isWindows } from "react-device-detect";
 
 const Container = styled.main`
   min-height: 100vh;
@@ -16,10 +17,11 @@ const Container = styled.main`
 
   .tabContainer {
     margin-top: 6rem;
+    display: flex;
+    flex-direction: row;
 
     .tab {
-      float: left;
-      width: 28%;
+      flex: 0.3;
     }
 
     .tab button {
@@ -69,8 +71,7 @@ const Container = styled.main`
     }
 
     .tabcontent {
-      width: 72%;
-      float: left;
+      flex: 0.7;
       padding: 0px 48px;
       border-left: none;
       display: flex;
@@ -86,8 +87,6 @@ const Container = styled.main`
       }
 
       .titleContainer {
-        display: flex;
-        align-items: center;
         margin-bottom: 0.25rem;
 
         .role {
@@ -100,7 +99,7 @@ const Container = styled.main`
         }
 
         .link {
-          margin-left: auto;
+          float: right;
 
           .icon {
             font-size: 16pt;
@@ -122,17 +121,80 @@ const Container = styled.main`
       }
     }
   }
+
+  @media only screen and (max-width: 840px) {
+    .tabContainer {
+      flex-direction: column;
+
+      .tab {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 2rem;
+        overflow-y: hidden;
+        overflow-x: auto;
+
+        &::-webkit-scrollbar {
+          ${(props) =>
+            props.showCustomScroll &&
+            `height: 5px;
+          `}
+        }
+
+        &::-webkit-scrollbar-thumb {
+          ${(props) =>
+            props.showCustomScroll &&
+            `border-radius:       1rem;
+            background-color: #b4b4b4;
+          `}
+        }
+      }
+
+      .tab button {
+        white-space: nowrap;
+        &::before {
+          left: 0;
+          top: unset;
+          bottom: 0;
+          right: 0;
+          width: unset;
+          height: 0.5px;
+        }
+
+        &.active::before {
+          left: 0;
+          top: unset;
+          right: 0;
+          bottom: -1px;
+          height: 3px;
+          width: unset;
+        }
+      }
+
+      .tabcontent {
+        padding: 0px;
+      }
+    }
+  }
 `;
 
 const Experience = () => {
   const [active, setActive] = useState(ExperienceData[0].id);
+  const [showCustomScroll, setShowCustomScroll] = useState(true);
+
+  useEffect(() => {
+    if (isWindows) {
+      setShowCustomScroll(true);
+    } else {
+      setShowCustomScroll(false);
+    }
+  }, []);
 
   const handleTabChange = (e) => {
     setActive(e.target.id);
   };
 
   return (
-    <Container id="experience">
+    <Container id="experience" showCustomScroll={showCustomScroll}>
       <Title className="title">Experience</Title>
       <div className="tabContainer">
         <div className="tab">
@@ -148,30 +210,28 @@ const Experience = () => {
             );
           })}
         </div>
-        {
-          ExperienceData.map((exp) => {
-            return (
-              <div
-                className={`tabcontent ${
-                  active === `${exp.id}` ? "active" : ""
-                }`}
-              >
-                <div className="titleContainer">
-                  <span className="role">{exp.role}</span>
-                  <span className="name">&thinsp;@{exp.name}</span>
-                  <a className="link" href={exp.link} target="_blank">
-                    <BsBoxArrowUpRight className="icon" />
-                  </a>
-                </div>
-                <div className="details">
-                  <span className="duration">{exp.duration}&ensp;</span>
-                  <span className="type">|&ensp;{exp.type}</span>
-                </div>
-                <div className="desc">{exp.description}</div>
+        {ExperienceData.map((exp) => {
+          return (
+            <div
+              className={`tabcontent ${active === `${exp.id}` ? "active" : ""}`}
+            >
+              <div className="titleContainer">
+                <span className="role">{exp.role}</span>
+                <span className="name">&thinsp;@{exp.name}</span>
+                <a className="link" href={exp.link} target="_blank">
+                  <BsBoxArrowUpRight className="icon" />
+                </a>
               </div>
-            );
-          })
-        }
+              <div className="details">
+                <span className="duration">{exp.duration}&ensp;</span>
+                <span className="type">|&ensp;{exp.type}</span>
+              </div>
+              <div className="desc">
+                <ReactMarkdown>{exp.description}</ReactMarkdown>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </Container>
   );
