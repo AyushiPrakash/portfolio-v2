@@ -10,7 +10,6 @@ const Container = styled.main`
   /* min-height: 100vh; */
   background-color: ${(props) => props.theme.backgroundPrimary};
 
-
   .title {
     text-align: right;
   }
@@ -304,9 +303,11 @@ const Experience = () => {
                   <span className="role">{exp.role}</span>
                   <span className="name">&thinsp;@{exp.name}</span>
                 </div>
-                <a className="link" href={exp.link} target="_blank">
-                  <BsBoxArrowUpRight className="icon" />
-                </a>
+                {exp.link && (
+                  <a className="link" href={exp.link} target="_blank">
+                    <BsBoxArrowUpRight className="icon" />
+                  </a>
+                )}
               </header>
 
               <div className="details">
