@@ -7,9 +7,9 @@ import { BsBoxArrowUpRight } from "react-icons/bs";
 import { isWindows } from "react-device-detect";
 
 const Container = styled.main`
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background-color: ${(props) => props.theme.backgroundPrimary};
-  padding: 0 1.5rem;
+
 
   .title {
     text-align: right;
@@ -86,21 +86,26 @@ const Container = styled.main`
         display: none;
       }
 
-      .titleContainer {
-        margin-bottom: 0.25rem;
+      header {
+        display: flex;
+        justify-content: space-between;
 
-        .role {
-          font-size: 18pt;
+        .titleContainer {
+          margin-bottom: 0.25rem;
+
+          .role {
+            font-size: 18pt;
+          }
+
+          .name {
+            font-size: 18pt;
+            color: ${(props) => props.theme.accentColor};
+          }
         }
-
-        .name {
-          font-size: 18pt;
-          color: ${(props) => props.theme.accentColor};
-        }
-
         .link {
-          float: right;
-
+          height: calc(18pt * 1.2);
+          display: grid;
+          place-items: center;
           .icon {
             font-size: 16pt;
             color: ${(props) => props.theme.textPrimary};
@@ -151,6 +156,8 @@ const Container = styled.main`
 
       .tab button {
         white-space: nowrap;
+        padding: 20px 18px;
+
         &::before {
           left: 0;
           top: unset;
@@ -172,6 +179,83 @@ const Container = styled.main`
 
       .tabcontent {
         padding: 0px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .tabContainer {
+      .tab button {
+        padding: 18px 16px;
+      }
+      .tabcontent {
+        header {
+          .titleContainer {
+            .role {
+              font-size: 16pt;
+            }
+
+            .name {
+              font-size: 16pt;
+            }
+          }
+
+          .link {
+            height: calc(16pt * 1.2);
+
+            .icon {
+              font-size: 14pt;
+            }
+          }
+        }
+
+        .details {
+          font-size: 12pt;
+          margin-bottom: 1rem;
+        }
+
+        .desc {
+          font-size: 13pt;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 420px) {
+    .tabContainer {
+      .tab button {
+        padding: 16px 14px;
+      }
+
+      .tabcontent {
+        header {
+          .titleContainer {
+            .role {
+              font-size: 15pt;
+            }
+
+            .name {
+              font-size: 15pt;
+            }
+          }
+
+          .link {
+            height: calc(15pt * 1.2);
+
+            .icon {
+              font-size: 13pt;
+            }
+          }
+        }
+
+        .details {
+          font-size: 11.5pt;
+          margin-bottom: 1rem;
+        }
+
+        .desc {
+          font-size: 12pt;
+        }
       }
     }
   }
@@ -215,13 +299,16 @@ const Experience = () => {
             <div
               className={`tabcontent ${active === `${exp.id}` ? "active" : ""}`}
             >
-              <div className="titleContainer">
-                <span className="role">{exp.role}</span>
-                <span className="name">&thinsp;@{exp.name}</span>
+              <header>
+                <div className="titleContainer">
+                  <span className="role">{exp.role}</span>
+                  <span className="name">&thinsp;@{exp.name}</span>
+                </div>
                 <a className="link" href={exp.link} target="_blank">
                   <BsBoxArrowUpRight className="icon" />
                 </a>
-              </div>
+              </header>
+
               <div className="details">
                 <span className="duration">{exp.duration}&ensp;</span>
                 <span className="type">|&ensp;{exp.type}</span>

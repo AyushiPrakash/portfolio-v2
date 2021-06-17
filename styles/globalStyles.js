@@ -2,6 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
+*{
+  transition: all 300ms linear;
+}
+
   html{
     scroll-behavior: smooth;
   }

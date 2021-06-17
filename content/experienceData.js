@@ -7,7 +7,7 @@ export const ExperienceData = [
     duration: "Dec 2020 - May 2021",
     type: "Internship",
     description:
-      " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque",
+      "- Worked together with the core team to design and code client applications using React and firebase.  \n - Initiated the development of BWI-website-builder for getting paid web development orders from clients around the world.",
   },
   {
     id: "parva",
@@ -16,7 +16,8 @@ export const ExperienceData = [
     link: "",
     duration: "Dec 2020 - Feb 2021",
     type: "Internship",
-    description: "",
+    description:
+      "- Collaborated with other developers to drive the development of Parva's social platform for communities.  \n - Refactored the original codebase to improve code readability and responsiveness of the platform.  \n - Added new social features for events and blogs.",
   },
   {
     id: "ieee",
@@ -39,7 +40,7 @@ export const ExperienceData = [
   {
     id: "arl",
     role: "Corporate Domain Member ",
-    name: "Aakash Research Labs, SRMIST",
+    name: "ARL, SRMIST",
     link: "",
     duration: "Sep 2018 - Aug 2019",
     type: "College Club",

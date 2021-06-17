@@ -6,14 +6,14 @@ import { FaGithub } from "react-icons/fa";
 import { ProjectsData } from "../../content/projectsData";
 
 const Container = styled.main`
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background-color: ${(props) => props.theme.backgroundPrimary};
-  padding: 0 1.5rem;
 
   .projectContainer {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
+    margin-top: 2rem;
 
     .projectCard {
       flex: 0 0 45%;
