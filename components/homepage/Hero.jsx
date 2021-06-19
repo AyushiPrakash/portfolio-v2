@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Title, Header } from "../shared/";
+import { Title, Header, Contact } from "../shared/";
+
 
 const Container = styled.main`
   min-height: 100vh;
@@ -55,6 +56,7 @@ const Hero = () => {
           <br /> I'm a developer & <br /> a designer.
         </div>
       </div>
+      <Contact />
     </Container>
   );
 };

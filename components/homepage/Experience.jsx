@@ -122,6 +122,7 @@ const Container = styled.main`
         font-size: 13pt;
         font-weight: 400;
         opacity: 0.9;
+        line-height: 1.5;
       }
     }
   }
