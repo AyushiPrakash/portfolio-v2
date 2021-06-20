@@ -113,7 +113,6 @@ const Container = styled.main`
 
         .image {
           height: calc(((100vw - 4rem) * 9) / 16);
-          width: calc(100vw - 4rem);
         }
 
         .content {
