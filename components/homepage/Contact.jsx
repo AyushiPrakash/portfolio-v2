@@ -1,12 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Lottie from "lottie-react";
 import animationData from "../../content/girlGif.json";
-import { FaGithub } from "react-icons/fa";
-import { FaDribbble } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaRegEnvelope } from "react-icons/fa";
-import { FaHackerrank } from "react-icons/fa";
+import { Waypoint } from "react-waypoint";
+import { render } from "react-dom";
 
 const Container = styled.main`
   background-color: ${(props) => props.theme.backgroundPrimary};
@@ -15,58 +12,49 @@ const Container = styled.main`
   justify-content: center;
   align-items: center;
 
-  .handles {
+  footer {
     a {
-      .icon {
-        font-size: 18pt;
+      text-align: center;
+      text-decoration: underline;
+      color: ${(props) => props.theme.textPrimary};
+    }
+    div {
+      font-size: 12pt;
+      margin-bottom: 0.25rem;
+
+      span {
         color: ${(props) => props.theme.accentColor};
-        margin-bottom: 1rem;
       }
     }
-  }
-
-  footer {
-    font-size: 11.5pt;
   }
 `;
 
 const Contact = () => {
-
   const style = {
     height: 300,
   };
 
+  let [renderLottie, setRenderLottie] = useState(false);
+
   return (
     <Container id="contact">
-      <Lottie
-        animationData={animationData}
-        style={style}
-        loop={false}
-        autoPlay={false}
-      />
-      <div className="handles">
-        <a href="https://github.com/AyushiPrakash" target="_blank">
-          {" "}
-          <FaGithub className="icon" />
+      <Waypoint onEnter={() => setRenderLottie(true)} />
+      {renderLottie && (
+        <Lottie
+          animationData={animationData}
+          style={style}
+          loop={false}
+          autoPlay={false}
+        />
+      )}
+      <footer>
+        <div>
+          Designed and built by <span>Ayushi Prakash </span>{" "}
+        </div>
+        <a href="https://github.com/AyushiPrakash/portfolio-v2" target="_blank">
+          <div>View Source Code</div>
         </a>
-        <a
-          href="https://www.linkedin.com/in/ayushi-prakash-9b14b4180/"
-          target="_blank"
-        >
-          <FaLinkedinIn className="icon" />
-        </a>
-
-        <a href="https://dribbble.com/AyushiPrakash" target="_blank">
-          <FaDribbble className="icon" />
-        </a>
-        <a href="https://www.hackerrank.com/aprakash162001" target="_blank">
-          <FaHackerrank className="icon" />
-        </a>
-        <a href="mailto:ayushiprakash03@gmail.com" target="_blank">
-          <FaRegEnvelope className="icon" />
-        </a>
-      </div>
-      <footer>Designed and built by Ayushi Prakash</footer>
+      </footer>
     </Container>
   );
 };

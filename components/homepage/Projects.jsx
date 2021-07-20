@@ -41,7 +41,6 @@ const Container = styled.main`
   .projectCard {
     padding: 1rem;
     border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
     .titleContainer {
       display: flex;
@@ -152,7 +151,7 @@ const breakpoint = {
 };
 
 const cardBgColor = [
-  "#faf0f2",
+  "#f5e2e5",
   "#fde9de",
   "#e0e1fc",
   "#d8eff0",
@@ -160,6 +159,8 @@ const cardBgColor = [
   "#cce6cc",
   "#c0ebe8",
 ];
+
+cardBgColor.sort(() => Math.random() - 0.5);
 
 const Projects = () => {
   return (
@@ -171,13 +172,13 @@ const Projects = () => {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        {ProjectsData.map((project) => {
+        {ProjectsData.map((project, index) => {
           return (
             <div
               className="projectCard"
               style={{
-                backgroundColor:
-                  cardBgColor[Math.floor(Math.random() * cardBgColor.length)],
+                backgroundColor: cardBgColor[index],
+                boxShadow: `0px 10px 20px 0px ${cardBgColor[index]}3E`,
               }}
             >
               <div className="titleContainer">
@@ -188,7 +189,8 @@ const Projects = () => {
                     href={project.githubLink}
                     target="_blank"
                     style={{
-                      color: "#ff503f",
+                      color: cardBgColor[index],
+                      filter: "saturate(4) contrast(4) brightness(0.6)",
                       height: "24px",
                     }}
                   >
@@ -202,7 +204,8 @@ const Projects = () => {
                     target="_blank"
                     style={{
                       marginLeft: "8px",
-                      color: "#ff503f",
+                      color: cardBgColor[index],
+                      filter: "saturate(4) contrast(4) brightness(0.6)",
                       height: "24px",
                     }}
                   >

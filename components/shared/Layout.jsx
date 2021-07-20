@@ -6,20 +6,17 @@ const Container = styled.main`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   main {
     padding-top: 8rem;
   }
   main:last-child {
-    padding-bottom: 8rem;
+    padding-bottom: 2rem;
   }
 
   @media only screen and (max-width: 930px) {
     main {
       padding-top: 4rem;
-    }
-    main:last-child {
-      padding-bottom: 4rem;
     }
   }
 `;
