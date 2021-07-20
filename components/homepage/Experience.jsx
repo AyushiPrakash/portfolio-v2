@@ -124,6 +124,11 @@ const Container = styled.main`
         opacity: 0.9;
         line-height: 1.5;
       }
+
+      .desc ul,
+      .desc ol {
+        padding-inline-start: 24px !important;
+      }
     }
   }
 
@@ -223,6 +228,8 @@ const Container = styled.main`
 
   @media only screen and (max-width: 420px) {
     .tabContainer {
+      margin-top: 3rem;
+
       .tab button {
         padding: 16px 14px;
       }

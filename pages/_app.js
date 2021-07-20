@@ -6,7 +6,7 @@ import Head from "next/head";
 
 const theme = {
   textPrimary: "#2C2C2C",
-  textSecondary: "#666",
+  textSecondary: "#555",
   accentColor: "#ff503f",
   backgroundPrimary: "#F4F4F2",
   backgroundSecondary: "#D4C9C9",
@@ -18,11 +18,11 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Head>
-        <script src="/js/TagCanvas.js"></script>
-      </Head>
+        <script src="/js/TagCanvas.js"> </script>{" "}
+      </Head>{" "}
       <>
-        <Component {...pageProps} />
-      </>
+        <Component {...pageProps} />{" "}
+      </>{" "}
     </ThemeProvider>
   );
 }
