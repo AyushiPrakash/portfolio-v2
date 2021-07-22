@@ -8,7 +8,7 @@ const Container = styled.main`
   background-color: ${(props) => props.theme.backgroundSecondary};
 
   .header {
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1.5rem;
   }
 
   .leftSection {
@@ -58,9 +58,6 @@ const Container = styled.main`
   }
 
   @media only screen and (max-width: 560px) {
-    .header {
-      padding: 0.5rem 1.5rem;
-    }
     .leftSection {
       .info {
         font-size: 48pt;

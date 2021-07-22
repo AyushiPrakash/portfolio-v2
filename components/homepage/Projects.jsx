@@ -45,9 +45,9 @@ const ProjectCard = styled.article`
   background-color: ${(props) => props.cardColor};
   box-shadow: 0px 10px 20px 0px ${(props) => props.cardColor}3E;
   transition: all 200ms linear;
-  &:hover {
+  /* &:hover {
     transform: translateY(-4px);
-  }
+  } */
 
   .titleContainer {
     display: flex;
@@ -149,13 +149,50 @@ const breakpoint = {
 };
 
 const cardBgColor = [
-  "#f5e2e5",
-  "#fde9de",
-  "#e0e1fc",
-  "#d8eff0",
-  "#ffdbd7",
-  "#cce6cc",
-  "#c0ebe8",
+  {
+    light: "#fff7b9",
+    dark: "#F7B400",
+  },
+  {
+    light: "#fce3ee",
+    dark: "#b8507f",
+  },
+  {
+    light: "#ccecee",
+    dark: "#199da7",
+  },
+  {
+    light: "#f5ece4",
+    dark: "#FF896B",
+  },
+  {
+    light: "#eecaca",
+    dark: "#9C3D54",
+  },
+  {
+    light: "#d6f3f3",
+    dark: "#64C2C2",
+  },
+  {
+    light: "#c5e3f6",
+    dark: "#2879ac",
+  },
+  {
+    light: "#ecdcf5",
+    dark: "#745ba7",
+  },
+  {
+    light: "#DDDDDD",
+    dark: "#5f5c5c",
+  },
+  {
+    light: "#D5ECC2",
+    dark: "#64ad57",
+  },
+  {
+    light: "#B3EBCC",
+    dark: "#3CB371",
+  },
 ];
 
 cardBgColor.sort(() => Math.random() - 0.5);
@@ -172,7 +209,10 @@ const Projects = () => {
       >
         {ProjectsData.map((project, index) => {
           return (
-            <ProjectCard cardColor={cardBgColor[index]} key={project.name}>
+            <ProjectCard
+              cardColor={cardBgColor[index % cardBgColor.length].light}
+              key={project.name}
+            >
               <div className="titleContainer">
                 <div className="title">{project.name}</div>
 
@@ -181,8 +221,8 @@ const Projects = () => {
                     href={project.githubLink}
                     target="_blank"
                     style={{
-                      color: cardBgColor[index],
-                      filter: "saturate(4) brightness(0.8)",
+                      color: cardBgColor[index % cardBgColor.length].dark,
+                      // filter: "saturate(4) brightness(0.8)",
                       height: "24px",
                     }}
                   >
@@ -196,8 +236,8 @@ const Projects = () => {
                     target="_blank"
                     style={{
                       marginLeft: "8px",
-                      color: cardBgColor[index],
-                      filter: "saturate(4) brightness(0.8)",
+                      color: cardBgColor[index % cardBgColor.length].dark,
+                      // filter: "saturate(4) brightness(0.8)",
                       height: "24px",
                     }}
                   >

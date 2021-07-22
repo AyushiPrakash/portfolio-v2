@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Title = styled.section`
   font-size: 32pt;
-  font-weight: 500;
+  font-weight: 400;
   color: ${(props) => props.theme.textPrimary};
   opacity: 0.9;
   margin-bottom: 6rem;
