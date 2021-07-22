@@ -5,6 +5,8 @@ const Title = styled.section`
   font-size: 32pt;
   font-weight: 500;
   color: ${(props) => props.theme.textPrimary};
+  opacity: 0.9;
+  margin-bottom: 6rem;
 
   &:before {
     content: "";
@@ -13,14 +15,23 @@ const Title = styled.section`
     margin-right: 0.5em;
     vertical-align: middle;
     border-bottom: 3px solid ${(props) => props.theme.textPrimary};
-    opacity: 0.8;
+    opacity: 0.9;
+  }
+
+  @media only screen and (max-width: 534px) {
+    font-size: 24pt;
+    margin-bottom: 2rem !important;
+
+    &:before {
+      width: 6.5rem;
+    }
   }
 
   @media only screen and (max-width: 360px) {
-    font-size: 24pt;
+    font-size: 22pt;
 
     &:before {
-      width: 6rem;
+      width: 5rem;
     }
   }
 `;

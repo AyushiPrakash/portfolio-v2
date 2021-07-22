@@ -15,14 +15,14 @@ const Container = styled.main`
     display: flex;
     margin-left: -30px;
     width: auto;
-    margin-top: 4rem;
+    /* margin-top: 4rem; */
   }
   .my-masonry-grid_column {
     padding-left: 20px;
     background-clip: padding-box;
   }
 
-  .my-masonry-grid_column > div {
+  .my-masonry-grid_column > article {
     margin-bottom: 20px;
   }
 
@@ -33,112 +33,110 @@ const Container = styled.main`
     .my-masonry-grid_column {
       padding-left: 15px;
     }
-    .my-masonry-grid_column > div {
+    .my-masonry-grid_column > article {
       margin-bottom: 15px;
     }
   }
+`;
 
-  .projectCard {
-    padding: 1rem;
-    border-radius: 4px;
+const ProjectCard = styled.article`
+  padding: 1rem;
+  border-radius: 4px;
+  background-color: ${(props) => props.cardColor};
+  box-shadow: 0px 10px 20px 0px ${(props) => props.cardColor}3E;
+  transition: all 200ms linear;
+  &:hover {
+    transform: translateY(-4px);
+  }
 
-    .titleContainer {
-      display: flex;
-      align-items: center;
+  .titleContainer {
+    display: flex;
+    align-items: center;
 
-      .title {
-        flex: 1;
-        color: ${(props) => props.theme.textPrimary};
-        font-size: 18pt;
-        font-weight: 500;
-        line-height: 24pt;
-      }
-
-      .icon {
-        font-size: 22px;
-      }
-    }
-
-    .content {
-      flex: 0 0 100%;
-      max-width: 100%;
-      margin-top: 1rem;
-      font-family: "Blinker", sans-serif;
+    .title {
+      flex: 1;
       color: ${(props) => props.theme.textPrimary};
-      font-size: 13pt;
-      line-height: 20pt;
+      font-size: 18pt;
+      font-weight: 500;
+      line-height: 24pt;
     }
 
-    .content ul,
-    .content ol {
-      padding-inline-start: 20px !important;
+    .icon {
+      font-size: 22px;
     }
+  }
 
-    .tools {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      flex-wrap: wrap;
-      font-family: "Blinker", sans-serif;
-      margin-top: 0.75rem;
-      color: ${(props) => props.theme.textSecondary};
-      font-size: 12pt;
-      font-weight: 300;
-      line-height: 16pt;
+  .content {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 1rem;
+    font-family: "Blinker", sans-serif;
+    color: ${(props) => props.theme.textPrimary};
+    font-size: 13pt;
+    line-height: 20pt;
+  }
 
-      .tool {
-        margin-right: 0.5em;
-      }
+  .content ul,
+  .content ol {
+    padding-inline-start: 20px !important;
+  }
+
+  .tools {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: "Blinker", sans-serif;
+    margin-top: 0.75rem;
+    color: ${(props) => props.theme.textSecondary};
+    font-size: 12pt;
+    font-weight: 300;
+    line-height: 16pt;
+
+    .tool {
+      margin-right: 0.5em;
     }
   }
 
   @media only screen and (max-width: 1100px) {
-    .projectCard {
-      .titleContainer {
-        .title {
-          font-size: 16pt;
-        }
-        .icon {
-          font-size: 20.5px;
-        }
+    .titleContainer {
+      .title {
+        font-size: 16pt;
       }
+      .icon {
+        font-size: 20.5px;
+      }
+    }
 
-      .content {
-        font-size: 13pt;
-      }
+    .content {
+      font-size: 13pt;
+    }
 
-      .tools {
-        font-size: 12pt;
-        line-height: 14pt;
-      }
+    .tools {
+      font-size: 12pt;
+      line-height: 14pt;
     }
   }
 
-  @media only screen and (max-width: 530px) {
-    .my-masonry-grid {
-      margin-top: 2rem;
+  @media only screen and (max-width: 534px) {
+    padding: 0.75rem;
+
+    .titleContainer {
+      .title {
+        font-size: 15pt;
+      }
+      .icon {
+        font-size: 20px;
+      }
     }
 
-    .projectCard {
-      padding: 0.75rem;
+    .content {
+      font-size: 12pt;
+      line-height: 16pt;
+    }
 
-      .titleContainer {
-        .title {
-          font-size: 15pt;
-        }
-        .icon {
-          font-size: 20px;
-        }
-      }
-
-      .content {
-        font-size: 12pt;
-        line-height: 16pt;
-      }
-
-      .tools {
-        font-size: 11.5pt;
-      }
+    .tools {
+      font-size: 11.5pt;
     }
   }
 `;
@@ -174,13 +172,7 @@ const Projects = () => {
       >
         {ProjectsData.map((project, index) => {
           return (
-            <div
-              className="projectCard"
-              style={{
-                backgroundColor: cardBgColor[index],
-                boxShadow: `0px 10px 20px 0px ${cardBgColor[index]}3E`,
-              }}
-            >
+            <ProjectCard cardColor={cardBgColor[index]} key={project.name}>
               <div className="titleContainer">
                 <div className="title">{project.name}</div>
 
@@ -190,7 +182,7 @@ const Projects = () => {
                     target="_blank"
                     style={{
                       color: cardBgColor[index],
-                      filter: "saturate(4) contrast(4) brightness(0.6)",
+                      filter: "saturate(4) brightness(0.8)",
                       height: "24px",
                     }}
                   >
@@ -205,7 +197,7 @@ const Projects = () => {
                     style={{
                       marginLeft: "8px",
                       color: cardBgColor[index],
-                      filter: "saturate(4) contrast(4) brightness(0.6)",
+                      filter: "saturate(4) brightness(0.8)",
                       height: "24px",
                     }}
                   >
@@ -221,7 +213,7 @@ const Projects = () => {
                   <span className="tool">{tool}</span>
                 ))}
               </div>
-            </div>
+            </ProjectCard>
           );
         })}
       </Masonry>

@@ -7,7 +7,6 @@ import { BsBoxArrowUpRight } from "react-icons/bs";
 import { isWindows } from "react-device-detect";
 
 const Container = styled.main`
-  /* min-height: 100vh; */
   background-color: ${(props) => props.theme.backgroundPrimary};
 
   .title {
@@ -15,7 +14,6 @@ const Container = styled.main`
   }
 
   .tabContainer {
-    margin-top: 6rem;
     display: flex;
     flex-direction: row;
 
@@ -228,8 +226,6 @@ const Container = styled.main`
 
   @media only screen and (max-width: 420px) {
     .tabContainer {
-      margin-top: 3rem;
-
       .tab button {
         padding: 16px 14px;
       }

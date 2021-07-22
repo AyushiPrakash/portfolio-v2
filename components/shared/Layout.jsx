@@ -8,7 +8,7 @@ const Container = styled.main`
   margin: 0 auto;
   padding: 0 1rem;
   main {
-    padding-top: 8rem;
+    padding-top: 6rem;
   }
   main:last-child {
     padding-bottom: 2rem;

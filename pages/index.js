@@ -15,6 +15,7 @@ export default function Home() {
         <title>Ayuu's Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      
       <Hero />
       <Layout>
         <About />

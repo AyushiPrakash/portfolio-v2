@@ -37,8 +37,8 @@ const Container = styled.main`
     display: none;
   }
 
-  @media only screen and (max-width: 820px) {
-    right: 1.5rem;
+  @media only screen and (max-width: 1200px) {
+    right: 2rem;
   }
 
   @media only screen and (max-width: 1500px) {

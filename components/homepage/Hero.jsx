@@ -7,6 +7,10 @@ const Container = styled.main`
   min-height: 100vh;
   background-color: ${(props) => props.theme.backgroundSecondary};
 
+  .header {
+    padding: 1rem 1.5rem;
+  }
+
   .leftSection {
     width: 100%;
     max-width: calc(1200px + 4rem);
@@ -54,6 +58,9 @@ const Container = styled.main`
   }
 
   @media only screen and (max-width: 560px) {
+    .header {
+      padding: 0.5rem 1.5rem;
+    }
     .leftSection {
       .info {
         font-size: 48pt;
@@ -79,7 +86,7 @@ const Container = styled.main`
 const Hero = () => {
   return (
     <Container>
-      <Header />
+      <Header className="header" />
       <div class="leftSection">
         <div className="title">Ayushi Prakash</div>
         <div className="info">

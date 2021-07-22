@@ -82,7 +82,6 @@ const Container = styled.main`
 
   @media only screen and (max-width: 930px) {
     display: block;
-    margin-top: 4rem;
 
     .sectionContainer {
       flex-direction: column;
@@ -140,7 +139,7 @@ const About = () => {
 
   return (
     <Container id="about">
-      <Title>About Me</Title>
+      <Title style={{marginBottom:"unset"}}>About Me</Title>
       <div className="sectionContainer">
         <div className="leftSection">
           <p>Hello, I'm Ayushi.</p>
