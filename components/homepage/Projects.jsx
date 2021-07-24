@@ -154,7 +154,7 @@ const cardBgColor = [
     dark: "#F7B400",
   },
   {
-    light: "#fce3ee",
+    light: "#f7cddf",
     dark: "#b8507f",
   },
   {
@@ -162,7 +162,7 @@ const cardBgColor = [
     dark: "#199da7",
   },
   {
-    light: "#f5ece4",
+    light: "#f3e4d6",
     dark: "#FF896B",
   },
   {
@@ -170,16 +170,12 @@ const cardBgColor = [
     dark: "#9C3D54",
   },
   {
-    light: "#d6f3f3",
-    dark: "#64C2C2",
-  },
-  {
     light: "#c5e3f6",
     dark: "#2879ac",
   },
   {
-    light: "#ecdcf5",
-    dark: "#745ba7",
+    light: "#E1CCEC",
+    dark: "#5c4092",
   },
   {
     light: "#DDDDDD",
@@ -222,7 +218,6 @@ const Projects = () => {
                     target="_blank"
                     style={{
                       color: cardBgColor[index % cardBgColor.length].dark,
-                      // filter: "saturate(4) brightness(0.8)",
                       height: "24px",
                     }}
                   >
@@ -237,7 +232,6 @@ const Projects = () => {
                     style={{
                       marginLeft: "8px",
                       color: cardBgColor[index % cardBgColor.length].dark,
-                      // filter: "saturate(4) brightness(0.8)",
                       height: "24px",
                     }}
                   >

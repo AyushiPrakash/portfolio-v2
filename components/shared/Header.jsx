@@ -128,7 +128,7 @@ const Container = styled.header`
   /* //////////////////// Nav Drawer /////////////////// */
   .drawer {
     display: none;
-    z-index: 1000;
+    z-index: 100;
     background-color: ${(props) => props.theme.textPrimary};
     transition: all 400ms linear;
     opacity: ${(props) => (props.openDrawer ? 1 : 0)};
