@@ -13,16 +13,15 @@ export default function Home() {
     <>
       <div>
         <Head>
-          <title> Ayuu 's Portfolio</title>{" "}
-          <link rel="icon" href="/favicon.ico" />
-        </Head>{" "}
+          <title> Ayushi Prakash </title>  
+          <link rel="icon" href="/favicon.ico " />
+        </Head>  
         <Hero />
         <Layout>
-          {" "}
           <About /> <Experience />
-          <Projects /> <Contact />{" "}
-        </Layout>{" "}
-      </div>{" "}
+          <Projects /> <Contact />
+        </Layout>  
+      </div>  
       <Cursor />
     </>
   );
