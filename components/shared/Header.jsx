@@ -8,7 +8,6 @@ const Container = styled.header`
   width: 100%;
   color: #2c2c2c;
   font-family: "Blinker", sans-serif;
-  cursor: pointer;
 
   .headroom {
     top: 0;

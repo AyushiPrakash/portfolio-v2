@@ -61,7 +61,6 @@ const Container = styled.main`
       margin-top: 1.75rem;
       padding: 1.25rem 2.5rem;
       pointer-events: auto;
-      cursor: pointer;
 
       &::before,
       &::after {

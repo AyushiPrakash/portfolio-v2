@@ -33,7 +33,6 @@ const Container = styled.main`
       transition: 0.3s;
       font-size: 12pt;
       text-align: left;
-      cursor: pointer;
 
       &::before {
         content: "";
