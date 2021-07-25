@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Title, Header, Contact } from "../shared/";
-
+import { Header, Contact, Button } from "../shared/";
 
 const Container = styled.main`
   min-height: 100vh;
@@ -55,6 +54,52 @@ const Container = styled.main`
       font-family: "Blinker", sans-serif;
       color: #2c2c2c;
     }
+
+    .button {
+      position: relative;
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 1.25rem 2.5rem;
+      border: none;
+      pointer-events: auto;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .buttonType {
+      font-size: 12pt;
+      font-weight: 400;
+      text-decoration: none;
+      line-height: 1;
+      border-radius: 0.35rem;
+      overflow: hidden;
+      color: #ffffff;
+      background: ${(props) => props.theme.backgroundPrimary};
+
+      span {
+        position: relative;
+        mix-blend-mode: difference;
+      }
+      &::before {
+        content: "";
+        background: ${(props) => props.theme.textPrimary};
+        width: 120%;
+        left: -10%;
+        transform: skew(30deg);
+        transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+      }
+      &:hover::before {
+        transform: translate3d(100%, 0, 0);
+      }
+    }
   }
 
   @media only screen and (max-width: 560px) {
@@ -84,12 +129,15 @@ const Hero = () => {
   return (
     <Container>
       <Header className="header" />
-      <div class="leftSection">
+      <div className="leftSection">
         <div className="title">Ayushi Prakash</div>
         <div className="info">
           Hello, my <br /> name's Ayushi.
           <br /> I'm a developer & <br /> a designer.
         </div>
+        <button class="button buttonType">
+          <span>Resume</span>
+        </button>
       </div>
       <Contact />
     </Container>
