@@ -45,9 +45,11 @@ const ProjectCard = styled.article`
   background-color: ${(props) => props.cardColor};
   box-shadow: 0px 10px 20px 0px ${(props) => props.cardColor}3E;
   transition: all 200ms linear;
-  /* &:hover {
-    transform: translateY(-4px);
-  } */
+  border: 1px solid ${(props) => props.cardColor};
+  &:hover {
+    transform: scale(1.05);
+    border: 1px solid ${(props) => props.cardColorDark};
+  }
 
   .titleContainer {
     display: flex;
@@ -63,6 +65,7 @@ const ProjectCard = styled.article`
 
     .icon {
       font-size: 22px;
+      color: ${(props) => props.cardColorDark};
     }
   }
 
@@ -207,6 +210,7 @@ const Projects = () => {
           return (
             <ProjectCard
               cardColor={cardBgColor[index % cardBgColor.length].light}
+              cardColorDark={cardBgColor[index % cardBgColor.length].dark}
               key={project.name}
             >
               <div className="titleContainer">
@@ -218,7 +222,6 @@ const Projects = () => {
                     href={project.githubLink}
                     target="_blank"
                     style={{
-                      color: cardBgColor[index % cardBgColor.length].dark,
                       height: "24px",
                     }}
                   >
@@ -233,7 +236,7 @@ const Projects = () => {
                     target="_blank"
                     style={{
                       marginLeft: "8px",
-                      color: cardBgColor[index % cardBgColor.length].dark,
+
                       height: "24px",
                     }}
                   >
