@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Headroom from "react-headroom";
 import styled from "styled-components";
-import { Button } from "../shared/";
 import { CgDetailsMore } from "react-icons/cg";
 import { IoCloseCircle } from "react-icons/io5";
 

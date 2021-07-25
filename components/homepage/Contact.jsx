@@ -51,7 +51,11 @@ const Contact = () => {
         <div>
           Designed and built by <span>Ayushi Prakash </span>{" "}
         </div>
-        <a href="https://github.com/AyushiPrakash/portfolio-v2" target="_blank">
+        <a
+          className="interactive"
+          href="https://github.com/AyushiPrakash/portfolio-v2"
+          target="_blank"
+        >
           <div>View Source Code</div>
         </a>
       </footer>

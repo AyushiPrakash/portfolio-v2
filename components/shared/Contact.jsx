@@ -50,24 +50,41 @@ const Contact = () => {
   return (
     <Container>
       <div className="handles">
-        <a href="https://github.com/AyushiPrakash" target="_blank">
+        <a
+          className="interactive"
+          href="https://github.com/AyushiPrakash"
+          target="_blank"
+        >
           {" "}
           <FaGithub className="icon" />
         </a>
         <a
+          className="interactive"
           href="https://www.linkedin.com/in/ayushi-prakash-9b14b4180/"
           target="_blank"
         >
           <FaLinkedinIn className="icon" />
         </a>
 
-        <a href="https://dribbble.com/AyushiPrakash" target="_blank">
+        <a
+          className="interactive"
+          href="https://dribbble.com/AyushiPrakash"
+          target="_blank"
+        >
           <FaDribbble className="icon" />
         </a>
-        <a href="https://www.hackerrank.com/aprakash162001" target="_blank">
+        <a
+          className="interactive"
+          href="https://www.hackerrank.com/aprakash162001"
+          target="_blank"
+        >
           <FaHackerrank className="icon" />
         </a>
-        <a href="mailto:ayushiprakash03@gmail.com" target="_blank">
+        <a
+          className="interactive"
+          href="mailto:ayushiprakash03@gmail.com"
+          target="_blank"
+        >
           <FaRegEnvelope className="icon" />
         </a>
       </div>

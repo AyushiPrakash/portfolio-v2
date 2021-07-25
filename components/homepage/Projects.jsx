@@ -214,6 +214,7 @@ const Projects = () => {
 
                 {project.githubLink && (
                   <a
+                    className="interactive"
                     href={project.githubLink}
                     target="_blank"
                     style={{
@@ -227,6 +228,7 @@ const Projects = () => {
 
                 {project.demoLink && (
                   <a
+                    className="interactive"
                     href={project.demoLink}
                     target="_blank"
                     style={{

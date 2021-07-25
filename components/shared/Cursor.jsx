@@ -95,8 +95,8 @@ const Cursor = () => {
       <CustomCursor id="custom-cursor">
         <svg
           className="cursor_inner"
-          width="48"
-          height="48"
+          width="36"
+          height="36"
           viewBox="0 0 48 48"
         >
           <circle
@@ -117,6 +117,7 @@ const Cursor = () => {
             cy="24"
             style={{
               strokeDasharray: "125.664, 125.664",
+              strokeDashoffset: "125.664",
             }}
           ></circle>
         </svg>

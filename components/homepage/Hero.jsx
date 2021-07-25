@@ -135,7 +135,7 @@ const Hero = () => {
           Hello, my <br /> name's Ayushi.
           <br /> I'm a developer & <br /> a designer.
         </div>
-        <button class="button buttonType">
+        <button class="button buttonType interactive">
           <span>Resume</span>
         </button>
       </div>

@@ -139,13 +139,17 @@ const About = () => {
 
   return (
     <Container id="about">
-      <Title style={{marginBottom:"unset"}}>About Me</Title>
+      <Title style={{ marginBottom: "unset" }}>About Me</Title>
       <div className="sectionContainer">
         <div className="leftSection">
           <p>Hello, I'm Ayushi.</p>
           <p>
             I'm currently a third year student at
-            <a href="https://www.srmist.edu.in/" target="_blank">
+            <a
+              className="interactive"
+              href="https://www.srmist.edu.in/"
+              target="_blank"
+            >
               {" "}
               SRM Institute of Science and Technology{" "}
             </a>
