@@ -54,56 +54,25 @@ const Container = styled.header`
       font-family: "Playfair Display", serif;
     }
 
-    div ul {
+    .wrapper ul {
       list-style: none;
       text-align: center;
-    }
-    div ul li {
-      display: inline-block;
-      &:not(:first-child) {
-        margin-left: 2rem;
+      li {
+        display: inline-block;
+        &:not(:first-child) {
+          margin-left: 2rem;
+        }
+
+        a {
+          display: block;
+          text-decoration: none;
+          color: ${(props) => props.theme.textPrimary};
+          font-size: 14pt;
+          font-weight: 400;
+        }
       }
     }
-    div ul li a {
-      display: block;
-      padding-bottom: 8px;
-      text-decoration: none;
-      color: ${(props) => props.theme.textPrimary};
-      font-size: 14pt;
-      font-weight: 400;
-    }
 
-    div ul li a,
-    div ul li a:after,
-    div ul li a:before {
-      transition: all 0.3s;
-    }
-    div ul li a:hover {
-      color: ${(props) => props.theme.textPrimary};
-    }
-
-    /* stroke */
-    div.wrapper ul li a,
-    div.fill ul li a {
-      position: relative;
-    }
-    div.wrapper ul li a:after,
-    div.fill ul li a:after {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: auto;
-      width: 0%;
-      content: ".";
-      color: transparent;
-      background: ${(props) => props.theme.textPrimary};
-      opacity: 0.8;
-      height: 2px;
-    }
-    div.wrapper ul li a:hover:after {
-      width: 100%;
-    }
     .burger {
       display: none;
     }
@@ -199,23 +168,31 @@ const Header = () => {
       >
         <header className="header">
           <div className="logo">AP</div>
-          <div class="wrapper">
-            <ul className="nav-links">
+          <div className="wrapper">
+            <ul>
               <li>
-                <a href="#about">ABOUT</a>
+                <a className="interactive" href="#about">
+                  ABOUT
+                </a>
               </li>
               <li>
-                <a href="#experience">EXPERIENCE</a>
+                <a className="interactive" href="#experience">
+                  EXPERIENCE
+                </a>
               </li>
               <li>
-                <a href="#projects">PROJECTS</a>
+                <a className="interactive" href="#projects">
+                  PROJECTS
+                </a>
               </li>
               <li>
-                <a href="#contact">CONTACT</a>
+                <a className="interactive" href="#contact">
+                  CONTACT
+                </a>
               </li>
             </ul>
           </div>
-          <div class="burger">
+          <div className="burger interactive">
             <CgDetailsMore
               size={34}
               onClick={() => {
@@ -226,9 +203,9 @@ const Header = () => {
         </header>
       </Headroom>
 
-      <div class="drawer">
-        <ul className="nav-links">
-          <li className="closeButton">
+      <div className="drawer">
+        <ul>
+          <li className="closeButton interactive">
             <IoCloseCircle
               color="#D4C9C9"
               size={36}
@@ -238,32 +215,41 @@ const Header = () => {
             />
           </li>
           <li
+            className="interactive"
             onClick={() => {
               setOpenDrawer(false);
             }}
           >
-            <a href="#about">ABOUT</a>
+            <a className="interactive" href="#about">
+              ABOUT
+            </a>
           </li>
           <li
             onClick={() => {
               setOpenDrawer(false);
             }}
           >
-            <a href="#experience">EXPERIENCE</a>
+            <a className="interactive" href="#experience">
+              EXPERIENCE
+            </a>
           </li>
           <li
             onClick={() => {
               setOpenDrawer(false);
             }}
           >
-            <a href="#projects">PROJECTS</a>
+            <a className="interactive" href="#projects">
+              PROJECTS
+            </a>
           </li>
           <li
             onClick={() => {
               setOpenDrawer(false);
             }}
           >
-            <a href="#contact">CONTACT</a>
+            <a className="interactive" href="#contact">
+              CONTACT
+            </a>
           </li>
         </ul>
       </div>
