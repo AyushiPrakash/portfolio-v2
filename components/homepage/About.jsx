@@ -123,7 +123,7 @@ const About = () => {
          pinchZoom: true,
          shuffleTags: true,
          frontSelect: true,
-         textHeight: 14,
+         textHeight: 18,
          reverse: true,
          depth: 0.5,
          maxSpeed: 0.04,
@@ -194,8 +194,8 @@ const About = () => {
                 >
                   <li>
                     <img
-                      width="50"
-                      height="50"
+                      width="56"
+                      height="56"
                       src={`/images/svg/${item.image}.svg`}
                     />
                     {item.name}

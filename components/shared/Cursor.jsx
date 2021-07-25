@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
+import { isMobile } from "react-device-detect";
 import styled from "styled-components";
 
 const CustomCursor = styled.div`
@@ -45,14 +46,14 @@ const CustomCursor = styled.div`
 
 const Cursor = () => {
   useEffect(() => {
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("click", handleMouseClick);
-    document.addEventListener("wheel", handleMouseScroll);
+    if (!isMobile) {
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("wheel", handleMouseScroll);
+    }
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("click", handleMouseClick);
-      document.addEventListener("wheel", handleMouseScroll);
+      document.removeEventListener("wheel", handleMouseScroll);
     };
   }, []);
 
@@ -70,14 +71,6 @@ const Cursor = () => {
     cursor.style.transform = `translate3d(${e.pageX}px, ${e.pageY}px, 0) scale3d(${scale}, ${scale}, ${scale})`;
   };
 
-  const handleMouseClick = (e) => {
-    const cursor = document.getElementById("custom-cursor");
-    cursor.classList.add("expand");
-    setTimeout(() => {
-      cursor.classList.remove("expand");
-    }, 500);
-  };
-
   const handleMouseScroll = (e) => {
     const cursorProgress = document.getElementById("cursor-progress");
     const winScroll =
@@ -92,7 +85,12 @@ const Cursor = () => {
 
   return (
     <>
-      <CustomCursor id="custom-cursor">
+      <CustomCursor
+        id="custom-cursor"
+        style={{
+          display: isMobile ? "none" : "block",
+        }}
+      >
         <svg
           className="cursor_inner"
           width="36"

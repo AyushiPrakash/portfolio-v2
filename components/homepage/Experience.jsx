@@ -120,7 +120,7 @@ const Container = styled.main`
         font-size: 13pt;
         font-weight: 400;
         opacity: 0.9;
-        line-height: 1.5;
+        line-height: 1.6;
       }
 
       .desc ul,
@@ -279,6 +279,7 @@ const Experience = () => {
   const handleTabChange = (e) => {
     setActive(e.target.id);
   };
+  
 
   return (
     <Container id="experience" showCustomScroll={showCustomScroll}>
@@ -296,47 +297,45 @@ const Experience = () => {
               >
                 {exp.name}
               </button>
-            )
+            );
           })}
         </div>
-        {
-          ExperienceData.map((exp) => {
-            return (
-              <div
-                className={`tabcontent ${
-                  active === `${exp.id}` ? "active" : ""
-                }`}
-              >
-                <header>
-                  <div className="titleContainer">
-                    <span className="role">{exp.role}</span>
-                    <span className="name">&thinsp;@{exp.name}</span>
-                  </div>
-                  {exp.link && (
-                    <a
-                      className="link interactive"
-                      href={exp.link}
-                      target="_blank"
-                    >
-                      <BsBoxArrowUpRight className="icon" />
-                    </a>
-                  )}
-                </header>
+        {ExperienceData.map((exp) => {
+          return (
+            <div
+              className={`tabcontent ${active === `${exp.id}` ? "active" : ""}`}
+            >
+              <header>
+                <div className="titleContainer">
+                  <span className="role">{exp.role}</span>
+                  <span className="name">&thinsp;@{exp.name}</span>
+                </div>
+                {exp.link && (
+                  <a
+                    className="link interactive"
+                    href={exp.link}
+                    target="_blank"
+                  >
+                    <BsBoxArrowUpRight className="icon" />
+                  </a>
+                )}
+              </header>
 
-                <div className="details">
-                  <span className="duration">{exp.duration}&ensp;</span>
-                  <span className="type">|&ensp;{exp.type}</span>
-                </div>
-                <div className="desc">
-                  <ReactMarkdown>{exp.description}</ReactMarkdown>
-                </div>
+              <div className="details">
+                <span className="duration">{exp.duration}&ensp;</span>
+                <span className="type">|&ensp;{exp.type}</span>
               </div>
-            )
-          })
-        }
+              <div className="desc">
+                <ReactMarkdown linkTarget="_blank">
+                  {exp.description}
+                </ReactMarkdown>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </Container>
-  )
+  );
 }
 
 export default Experience;

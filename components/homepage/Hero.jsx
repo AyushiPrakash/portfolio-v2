@@ -58,9 +58,8 @@ const Container = styled.main`
     .button {
       position: relative;
       display: inline-block;
-      margin-top: 1.5rem;
+      margin-top: 1.75rem;
       padding: 1.25rem 2.5rem;
-      border: none;
       pointer-events: auto;
       cursor: pointer;
 
@@ -75,18 +74,21 @@ const Container = styled.main`
     }
 
     .buttonType {
-      font-size: 12pt;
-      font-weight: 400;
+      font-size: 13pt;
+      font-weight: 500;
       text-decoration: none;
       line-height: 1;
       border-radius: 0.35rem;
       overflow: hidden;
       color: #ffffff;
-      background: ${(props) => props.theme.backgroundPrimary};
-
+      border: 2px solid ${(props) => props.theme.textPrimary};
+      background: ${(props) => props.theme.backgroundSecondary};
+      transition: color 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+      &:hover {
+        color: ${(props) => props.theme.textPrimary};
+      }
       span {
         position: relative;
-        mix-blend-mode: difference;
       }
       &::before {
         content: "";
@@ -110,16 +112,36 @@ const Container = styled.main`
       .title {
         font-size: 20pt;
       }
+
+      .button {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 440px) {
+    .leftSection {
+      .info {
+        font-size: 42pt;
+      }
+
+      .button {
+        margin-top: 1.75rem;
+      }
     }
   }
 
   @media only screen and (max-width: 420px) {
     .leftSection {
       .info {
-        font-size: 34pt;
+        font-size: 33pt;
       }
       .title {
         font-size: 18pt;
+      }
+      .button {
+        margin-top: 1.25rem;
+        padding: 1rem 2rem;
       }
     }
   }
@@ -135,9 +157,13 @@ const Hero = () => {
           Hello, my <br /> name's Ayushi.
           <br /> I'm a developer & <br /> a designer.
         </div>
-        <button class="button buttonType interactive">
+        <a
+          className="button buttonType interactive"
+          href="https://drive.google.com/file/d/1qZN6Z4JCj51wN574WOUb7CrnmER0YDzn/view?usp=sharing"
+          target="_blank"
+        >
           <span>Resume</span>
-        </button>
+        </a>
       </div>
       <Contact />
     </Container>

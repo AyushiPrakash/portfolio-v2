@@ -6,6 +6,7 @@ import { FaGithub } from "react-icons/fa";
 import { ProjectsData } from "../../content/projectsData";
 import Masonry from "react-masonry-css";
 import ReactMarkdown from "react-markdown";
+import Fade from "react-reveal/Fade";
 
 const Container = styled.main`
   min-height: 100vh;
@@ -22,7 +23,7 @@ const Container = styled.main`
     background-clip: padding-box;
   }
 
-  .my-masonry-grid_column > article {
+  .my-masonry-grid_column > div {
     margin-bottom: 20px;
   }
 
@@ -33,7 +34,7 @@ const Container = styled.main`
     .my-masonry-grid_column {
       padding-left: 15px;
     }
-    .my-masonry-grid_column > article {
+    .my-masonry-grid_column > div {
       margin-bottom: 15px;
     }
   }
@@ -208,51 +209,53 @@ const Projects = () => {
       >
         {ProjectsData.map((project, index) => {
           return (
-            <ProjectCard
-              cardColor={cardBgColor[index % cardBgColor.length].light}
-              cardColorDark={cardBgColor[index % cardBgColor.length].dark}
-              key={project.name}
-            >
-              <div className="titleContainer">
-                <div className="title">{project.name}</div>
+            <Fade bottom delay={index * 100}>
+              <ProjectCard
+                cardColor={cardBgColor[index % cardBgColor.length].light}
+                cardColorDark={cardBgColor[index % cardBgColor.length].dark}
+                key={project.name}
+              >
+                <div className="titleContainer">
+                  <div className="title">{project.name}</div>
 
-                {project.githubLink && (
-                  <a
-                    className="interactive"
-                    href={project.githubLink}
-                    target="_blank"
-                    style={{
-                      height: "24px",
-                    }}
-                  >
-                    <FaGithub className="icon" />
-                  </a>
-                )}
+                  {project.githubLink && (
+                    <a
+                      className="interactive"
+                      href={project.githubLink}
+                      target="_blank"
+                      style={{
+                        height: "24px",
+                      }}
+                    >
+                      <FaGithub className="icon" />
+                    </a>
+                  )}
 
-                {project.demoLink && (
-                  <a
-                    className="interactive"
-                    href={project.demoLink}
-                    target="_blank"
-                    style={{
-                      marginLeft: "8px",
+                  {project.demoLink && (
+                    <a
+                      className="interactive"
+                      href={project.demoLink}
+                      target="_blank"
+                      style={{
+                        marginLeft: "8px",
 
-                      height: "24px",
-                    }}
-                  >
-                    <BsBoxArrowUpRight className="icon" />
-                  </a>
-                )}
-              </div>
-              <div className="content">
-                <ReactMarkdown>{project.description}</ReactMarkdown>
-              </div>
-              <div className="tools">
-                {project.tools.map((tool) => (
-                  <span className="tool">{tool}</span>
-                ))}
-              </div>
-            </ProjectCard>
+                        height: "24px",
+                      }}
+                    >
+                      <BsBoxArrowUpRight className="icon" />
+                    </a>
+                  )}
+                </div>
+                <div className="content">
+                  <ReactMarkdown>{project.description}</ReactMarkdown>
+                </div>
+                <div className="tools">
+                  {project.tools.map((tool) => (
+                    <span className="tool">{tool}</span>
+                  ))}
+                </div>
+              </ProjectCard>
+            </Fade>
           );
         })}
       </Masonry>
