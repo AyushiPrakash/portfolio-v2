@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Lottie from "lottie-react";
+import { useLottie } from "lottie-react";
 import animationData from "../../content/girlGif.json";
 import { Waypoint } from "react-waypoint";
 
@@ -78,9 +78,15 @@ const Container = styled.main`
 `;
 
 const Contact = () => {
-  const style = {
-    height: 300,
-  };
+  const { View, goToAndPlay } = useLottie(
+    {
+      animationData: animationData,
+      loop: false,
+      autoplay: false,
+      renderer: "canvas",
+    },
+    { height: 300 }
+  );
 
   let [renderLottie, setRenderLottie] = useState(false);
 
@@ -93,18 +99,11 @@ const Contact = () => {
       >
         <span>View Resume</span>
       </a>
-      <Waypoint onEnter={() => setRenderLottie(true)} />
-      {renderLottie && (
-        <Lottie
-          animationData={animationData}
-          style={style}
-          loop={false}
-          autoPlay={false}
-        />
-      )}
+      <Waypoint onEnter={() => goToAndPlay(0)} />
+      {View}
       <footer>
         <div>
-          Designed and built by <span>Ayushi Prakash </span>{" "}
+          Designed and built by <span>Ayushi Prakash </span>
         </div>
         <a
           className="interactive"
