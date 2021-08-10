@@ -5,7 +5,7 @@ export const ExperienceData = [{
         link: "https://drive.google.com/file/d/1FZ0fDpvy9Um3f_jzK5ga27ngkIcoevQH/view?usp=sharing",
         duration: "Dec 2020 - May 2021",
         type: "Internship",
-        description: "- Worked together with the core team to design and code client applications using React, Material UI, and Firebase.  \n - Single-handedly developed BWI-website-builder for getting paid web development orders from clients around the world using React, Material UI, Firebase, and Razorpay. \n - Initiated the development of an eShopping fullstack template for deploying fully managable eShopping websites for clients, using React, Redux, and Firebase.",
+        description: "- Worked together with the core team to design and code client applications using React, Material UI, and Firebase.  \n - Single-handedly developed BWI-website-builder for getting paid web development orders from clients around the world using React, Material UI, Firebase, and Razorpay. \n - Initiated the development of an eShopping fullstack template for deploying fully manageable eShopping websites for clients, using React, Redux, and Firebase.",
     },
     {
         id: "parva",
