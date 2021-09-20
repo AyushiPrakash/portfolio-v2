@@ -33,7 +33,7 @@ export const ExperienceData = [
     id: "td",
     role: "Web Dev Member",
     name: "Think-Digital, SRMIST",
-    link: "https://drive.google.com/drive/u/0/folders/1ezfI62zWYcumbNCL1RjjifKl7ifclLky",
+    link: "https://drive.google.com/file/d/1yCbfOIT7R-yI6jEphgQt0be045K0vkak/view?usp=sharing",
     duration: "Sep 2020 - Present",
     type: "College Club",
     description:
