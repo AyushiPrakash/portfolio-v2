@@ -144,7 +144,7 @@ const About = () => {
         <div className="leftSection">
           <p>Hello, I'm Ayushi.</p>
           <p>
-            I'm currently a third year student at
+            I'm currently a final year student at
             <a
               className="interactive"
               href="https://www.srmist.edu.in/"
