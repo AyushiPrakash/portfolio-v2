@@ -3,7 +3,7 @@ export const ExperienceData = [
     id: "bwi",
     role: "React Developer",
     name: "Build with Innovation",
-    link: "https://drive.google.com/file/d/1FZ0fDpvy9Um3f_jzK5ga27ngkIcoevQH/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1Jhnxiv0EIhtinbQfpgeoPLpwKFLK78Ai/view?usp=sharing",
     duration: "Dec 2020 - May 2021",
     type: "Internship",
     description:
@@ -13,7 +13,7 @@ export const ExperienceData = [
     id: "parva",
     role: "React Developer",
     name: "Parva",
-    link: "https://drive.google.com/file/d/1sTwfiEHi7G5prtnPZdkrMwCwUEGdnrhc/view?usp=sharing",
+    link: "https://drive.google.com/file/d/15gjN6qdpxXPpaf2peHk6C4avsgXwOCFF/view?usp=sharing",
     duration: "Dec 2020 - Feb 2021",
     type: "Internship",
     description:
