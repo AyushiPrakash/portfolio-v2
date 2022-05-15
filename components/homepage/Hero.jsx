@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Header, Contact, Button } from "../shared/";
+import { Header, Contact } from "../shared/";
 
 const Container = styled.main`
   min-height: 100vh;
@@ -154,7 +154,7 @@ const Hero = () => {
         <div className="title">Ayushi Prakash</div>
         <div className="info">
           Hello, my <br /> name's Ayushi.
-          <br /> I'm a developer & <br /> a designer.
+          <br /> I'm a designer & <br /> a developer.
         </div>
         <a
           className="button buttonType interactive"

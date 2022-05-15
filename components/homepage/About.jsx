@@ -156,8 +156,8 @@ const About = () => {
             pursuing a degree in Electronics and Communication Engineering.
           </p>
           <p>
-            I'm front-end developer, passionate about building and designing
-            beautiful and functional user experiences.
+            I'm a UI/UX designer & a front-end developer, passionate about
+            building and designing beautiful and functional user experiences.
           </p>
           <p>
             I aspire towards a career that will allow me to channel my
@@ -167,10 +167,10 @@ const About = () => {
 
           <p>Here are a few technologies I've been working with recently :</p>
           <ul>
-            <li>React.js</li>
-            <li>Firebase</li>
-            <li>Next.js</li>
-            <li>Three.js</li>
+            <li>React Native</li>
+            <li>Adobe xd</li>
+            <li>Adobe Photoshop</li>
+            <li>Adobe Illustrator</li>
           </ul>
         </div>
         <div className="rightSection">

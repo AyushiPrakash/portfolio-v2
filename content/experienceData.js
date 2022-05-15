@@ -1,5 +1,15 @@
 export const ExperienceData = [
   {
+    id: "bfhl",
+    role: "Software Development Intern",
+    name: "Bajaj Finserv Health Limited",
+    link: "",
+    duration: "Jan 2022 - Present",
+    type: "Internship",
+    description:
+      "- Working on the Doctor side mobile app- DRx Mobile using React Native\n - Collaborating with the design & Backend team to generate new features on a daily basis. ",
+  },
+  {
     id: "bwi",
     role: "React Developer",
     name: "Build with Innovation",
