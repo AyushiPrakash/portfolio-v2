@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle `
+const GlobalStyle = createGlobalStyle`
 
 *{
   transition: all 300ms linear;
@@ -13,6 +13,10 @@ const GlobalStyle = createGlobalStyle `
 
   body {
       background-color: ${(props) => props.theme.backgroundPrimary};
+  }
+
+  .markdown a{
+    color: #ff503f;
   }
   
 `;
